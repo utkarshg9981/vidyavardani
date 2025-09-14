@@ -49,11 +49,11 @@ function App() {
 
   return (
     <div className="flex min-h-screen w-screen flex-col bg-richblack-900 font-inter">
-      <HashRouter>
+     
 
       
       <Navbar />
-     
+      <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
@@ -152,8 +152,8 @@ function App() {
         </Route>
 
         <Route path="*" element={<Error />} />
+      </Routes>
       
-      </HashRouter>
     </div>
   )
 }
