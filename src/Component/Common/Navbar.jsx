@@ -117,7 +117,7 @@ const Navbar = () => {
                                 <IoIosArrowDown/>
 
                                 <div className={`invisible absolute left-[50%] 
-                                    translate-x-[-49%] ${subLinks.length ? "translate-y-[15%]" : "translate-y-[40%]"}
+                                    translate-x-[-49%] ${(Array.isArray(subLinks) && subLinks.length) ? "translate-y-[15%]" : "translate-y-[40%]"}
                                  top-[50%] z-50 
                                 flex flex-col rounded-md bg-richblack-5 p-4 text-richblack-900
                                 opacity-0 transition-all duration-200 group-hover:visible
@@ -129,7 +129,7 @@ const Navbar = () => {
                                 </div>
 
                                 {
-                                    subLinks.length ? (
+                                    Array.isArray(subLinks) && subLinks.length ? (
                                             subLinks.map( (subLink, index) => (
                                                 <Link className='rounded-lg bg-transparent py-4 pl-4 hover:bg-richblack-50' to={`catalog/${createCategoryURL(subLink.name)}`} key={index}>
                                                     <p>{subLink.name}</p>
@@ -214,7 +214,7 @@ const Navbar = () => {
                      <div>
                        <p className="text-richblack-25 font-medium py-2">{link.title}</p>
                        <div className="pl-4">
-                         {subLinks.length ? (
+                         {Array.isArray(subLinks) && subLinks.length ? (
                            subLinks.map((subLink, subIndex) => (
                              <Link 
                                key={subIndex}
