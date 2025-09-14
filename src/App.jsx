@@ -1,7 +1,7 @@
 import { useEffect } from "react"
 import "./App.css"
 import { useDispatch, useSelector } from "react-redux"
-import { Route, Routes, useNavigate } from "react-router-dom"
+import { HashRouter, Route, Routes, useNavigate } from "react-router-dom"
 
 
 import Navbar from "./Component/Common/Navbar"
@@ -49,6 +49,9 @@ function App() {
 
   return (
     <div className="flex min-h-screen w-screen flex-col bg-richblack-900 font-inter">
+      <HashRouter>
+
+      
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
@@ -150,6 +153,7 @@ function App() {
 
         <Route path="*" element={<Error />} />
       </Routes>
+      </HashRouter>
     </div>
   )
 }
