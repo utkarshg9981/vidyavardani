@@ -33,6 +33,7 @@ const TimelineSection = () => {
   return (
     <div>
       <div className="flex flex-col lg:flex-row gap-20 mb-20 items-center">
+         
         <div className="lg:w-[45%] flex flex-col gap-14 lg:gap-3">
           {TimeLine.map((ele, i) => {
             return (
@@ -80,6 +81,7 @@ const TimelineSection = () => {
             className="shadow-white shadow-[20px_20px_0px_0px] object-cover h-[400px] lg:h-fit"
           />
         </div>
+
       </div>
     </div>
   );

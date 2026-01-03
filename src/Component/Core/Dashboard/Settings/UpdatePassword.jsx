@@ -10,7 +10,6 @@ import IconBtn from "../../../Common/IconBtn"
 export default function UpdatePassword() {
   const { token } = useSelector((state) => state.auth)
   const navigate = useNavigate()
-  const [loading, setLoading] = useState(false);
   const [showOldPassword, setShowOldPassword] = useState(false)
   const [showNewPassword, setShowNewPassword] = useState(false)
 

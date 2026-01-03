@@ -12,14 +12,13 @@ function VerifyEmail() {
   const { signupData, loading } = useSelector((state) => state.auth);
   const dispatch = useDispatch();
   const navigate = useNavigate();
-
   useEffect(() => {
 
     if (!signupData) {
       navigate("/signup");
     }
 
-  }, []);
+  }, [signupData, navigate]);
 
   const handleVerifyAndSignup = (e) => {
     e.preventDefault();

@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
 import { HomePageExplore } from "../../../Data/Homepage-Explore";
 import CourseCard from "./CourseCard";
 import HighlightText from "./HighlightText";

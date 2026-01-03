@@ -29,7 +29,6 @@ import './mobile-menu.css'
 const Navbar = () => {
     const {token} = useSelector((state)=> state.auth);
     const {user} = useSelector((state)=> state.profile);
-    const {cart} = useSelector((state)=> state.cart);
     const {totalItems} = useSelector((state)=> state.cart);
     const location = useLocation();
 
@@ -49,6 +48,7 @@ const Navbar = () => {
     
     useEffect( () => {
         fetchSublinks();
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     },[] )
 
     // Close mobile menu when screen size changes to desktop
@@ -101,7 +101,7 @@ const Navbar = () => {
       <div className='flex w-11/12 max-w-maxContent items-center justify-between'>
         {/* Image */}
       <Link to="/">
-        <img src={logo} width={160} height={42} loading='lazy'/>
+        <img src={logo} width={160} height={42} loading='lazy' alt="Vidyavardani Logo"/>
       </Link>
 
       {/* Nav Links */}
@@ -162,7 +162,7 @@ const Navbar = () => {
         {/* Login/SignUp/Dashboard */}
         <div className='hidden md:flex gap-x-4 items-center'>
             {   
-                user && user?.accountType != "Instructor" && (
+                user && user?.accountType !== "Instructor" && (
                     <Link to="/dashboard/cart" className='relative pr-2'>
                         <AiOutlineShoppingCart className='text-2xl text-richblack-100 ' />
                         {

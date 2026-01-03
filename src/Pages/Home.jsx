@@ -1,4 +1,3 @@
-
 import { FaArrowRight } from "react-icons/fa"
 import { Link } from "react-router-dom"
 
@@ -13,7 +12,6 @@ import ExploreMore from "../Component/Core/HomePage/ExploreMore"
 import HighlightText from "../Component/Core/HomePage/HighlightText"
 import InstructorSection from "../Component/Core/HomePage/InstructorSection"
 import LearningLanguageSection from "../Component/Core/HomePage/LearningLanguageSection"
-import TimelineSection from "../Component/Core/HomePage/Timeline"
 
 function Home() {
   return (

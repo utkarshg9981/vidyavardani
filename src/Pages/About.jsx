@@ -1,15 +1,12 @@
 import React from "react"
 
-import FoundingStory from "../Asset/Image/FoundingStory.png"
 import BannerImage1 from "../Asset/Image/aboutus1.webp"
 import BannerImage2 from "../Asset/Image/aboutus2.webp"
 import BannerImage3 from "../Asset/Image/aboutus3.webp"
 import Footer from "../Component/Common/Footer"
-import ReviewSlider from "../Component/Common/ReviewSlider"
 import ContactFormSection from "../Component/Core/AboutPage/ContactFormSection"
 import LearningGrid from "../Component/Core/AboutPage/LearningGrid"
 import Quote from "../Component/Core/AboutPage/Quote"
-import StatsComponenet from "../Component/Core/AboutPage/Stats"
 import HighlightText from "../Component/Core/HomePage/HighlightText"
 
 const About = () => {

@@ -1,7 +1,7 @@
 import { useEffect } from "react"
 import "./App.css"
 import { useDispatch, useSelector } from "react-redux"
-import { HashRouter, Route, Routes, useNavigate } from "react-router-dom"
+import { Route, Routes, useNavigate } from "react-router-dom"
 
 
 import Navbar from "./Component/Common/Navbar"
@@ -44,7 +44,7 @@ function App() {
       const token = JSON.parse(localStorage.getItem("token"))
       dispatch(getUserDetails(token, navigate))
     }
-
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   return (

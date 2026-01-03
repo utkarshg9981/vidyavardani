@@ -8,7 +8,6 @@ import { BigPlayButton, ControlBar, CurrentTimeDisplay, ForwardControl, LoadingS
 
 import { markLectureAsComplete } from "../../../Service/Operation/courseDetailsAPI"
 import { updateCompletedLectures } from "../../../Slice/viewCourseSlice"
-import IconBtn from "../../Common/IconBtn"
 import { BiSkipNextCircle, BiSkipPreviousCircle } from "react-icons/bi"
 import { MdOutlineReplayCircleFilled } from "react-icons/md"
 
@@ -23,9 +22,7 @@ const VideoDetails = () => {
     useSelector((state) => state.viewCourse)
 
   const [videoData, setVideoData] = useState([])
-  const [previewSource, setPreviewSource] = useState("")
   const [videoEnded, setVideoEnded] = useState(false)
-  const [loading, setLoading] = useState(false)
 
   useEffect(() => {
     ; (async () => {
@@ -43,11 +40,10 @@ const VideoDetails = () => {
         )
 
         setVideoData(filteredVideoData[0])
-        setPreviewSource(courseEntireData.thumbnail)
         setVideoEnded(false)
       }
     })()
-  }, [courseSectionData, courseEntireData, location.pathname])
+  }, [courseSectionData, courseEntireData, courseId, sectionId, subSectionId, navigate])
 
 
   const isFirstVideo = () => {
