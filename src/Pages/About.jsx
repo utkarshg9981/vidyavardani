@@ -4,8 +4,6 @@ import BannerImage1 from "../Asset/Image/aboutus1.webp"
 import BannerImage2 from "../Asset/Image/aboutus2.webp"
 import BannerImage3 from "../Asset/Image/aboutus3.webp"
 import Footer from "../Component/Common/Footer"
-import ContactFormSection from "../Component/Core/AboutPage/ContactFormSection"
-import LearningGrid from "../Component/Core/AboutPage/LearningGrid"
 import Quote from "../Component/Core/AboutPage/Quote"
 import HighlightText from "../Component/Core/HomePage/HighlightText"
 

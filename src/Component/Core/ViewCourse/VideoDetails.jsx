@@ -3,7 +3,6 @@ import { useDispatch, useSelector } from "react-redux"
 import { useNavigate, useParams } from "react-router-dom"
 
 import "video-react/dist/video-react.css"
-import { useLocation } from "react-router-dom"
 import { BigPlayButton, ControlBar, CurrentTimeDisplay, ForwardControl, LoadingSpinner, PlaybackRateMenuButton, Player, ReplayControl, TimeDivider } from "video-react"
 
 import { markLectureAsComplete } from "../../../Service/Operation/courseDetailsAPI"
@@ -14,7 +13,6 @@ import { MdOutlineReplayCircleFilled } from "react-icons/md"
 const VideoDetails = () => {
   const { courseId, sectionId, subSectionId } = useParams()
   const navigate = useNavigate()
-  const location = useLocation()
   const playerRef = useRef(null)
   const dispatch = useDispatch()
   const { token } = useSelector((state) => state.auth)
@@ -23,6 +21,7 @@ const VideoDetails = () => {
 
   const [videoData, setVideoData] = useState([])
   const [videoEnded, setVideoEnded] = useState(false)
+  const [isLoading, setIsLoading] = useState(false)
 
   useEffect(() => {
     ; (async () => {
@@ -155,7 +154,7 @@ const VideoDetails = () => {
   }
 
   const handleLectureCompletion = async () => {
-    setLoading(true)
+    setIsLoading(true)
     const res = await markLectureAsComplete(
       { courseId: courseId, subsectionId: subSectionId },
       token
@@ -163,7 +162,7 @@ const VideoDetails = () => {
     if (res) {
       dispatch(updateCompletedLectures(subSectionId))
     }
-    setLoading(false)
+    setIsLoading(false)
   }
 
   return (

@@ -12,6 +12,7 @@ export default function UpdatePassword() {
   const navigate = useNavigate()
   const [showOldPassword, setShowOldPassword] = useState(false)
   const [showNewPassword, setShowNewPassword] = useState(false)
+  const [loading, setLoading] = useState(false)
 
   const {
     register,
@@ -21,9 +22,12 @@ export default function UpdatePassword() {
 
   const submitPasswordForm = async (data) => {
     try {
+      setLoading(true)
       await changePassword(token, data)
+      setLoading(false)
     } catch (error) {
       console.log("ERROR MESSAGE - ", error.message)
+      setLoading(false)
     }
   }
 

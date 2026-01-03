@@ -9,7 +9,7 @@ import { FaChevronLeft, FaChevronRight } from 'react-icons/fa'
 import { MdOutlineKeyboardArrowDown } from 'react-icons/md'
 
 const VideoDetailsSidebar = ({ setReviewModal }) => {
-  const [activeStatus, setActiveStatus] = useState(\"\");
+  const [activeStatus, setActiveStatus] = useState("");
   const [videoActive, setVideoActive] = useState("");
   const { courseId, sectionId, subsectionId } = useParams();
   const { courseSectionData, courseEntireData, completedLectures, totalNoOfLectures } = useSelector(state => state.viewCourse);
